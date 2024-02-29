@@ -1,41 +1,47 @@
-import logo from "./logo.svg";
+// App.js
+
+// Import necessary modules from React and React Router
+import React from "react";
+import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
+
+// Import components for each route
+import Home from "./components/Home";
+import Jesus from "./components/Jesus";
+import Luis from "./components/Luis";
+
+// Import the global styles for the entire app
 import "./App.css";
 
-function App() {
+// Define the main App component
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://www.youtube.com/shorts/zQrq9B4KlvA"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Luis Roman
-        </a>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Jesus Avila
-        </a>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    // Wrap the entire app with the Router component to enable routing
+    <Router>
+      {/* Main container for the entire app */}
+      <div className="app-container">
+        {/* Navigation bar with a link to the Home page */}
+        <div className="nav-bar">
+          {/* Use the Link component for navigation links */}
+          <Link to="/" className="nav-button">
+            Home
+          </Link>
+        </div>
 
+        {/* Define the routes for each page using the Routes component */}
+        <Routes>
+          {/* Route for the Home page */}
+          <Route path="/" element={<Home />} />
+
+          {/* Route for the Jesus page */}
+          <Route path="/jesus" element={<Jesus />} />
+
+          {/* Route for the Luis page */}
+          <Route path="/luis" element={<Luis />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+};
+
+// Export the App component as the default export
 export default App;
