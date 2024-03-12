@@ -4,8 +4,7 @@ import React from "react";
 const Jesus = () => {
   // Function to be executed when the button is clicked
   const handleButtonClick = () => {
-    alert("VIRUS INSTALLED!");
-    window.location.href = "https://www.youtube.com/watch?v=3lMB-R7V0Wk";
+    window.location.href = "https://main.dr4zv7blhbjjg.amplifyapp.com";
   };
 
   return (
